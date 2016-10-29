@@ -326,6 +326,7 @@ public class GCMIntentService extends GcmListenerService implements PushConstant
                         .setContentTitle(fromHtml(extras.getString(TITLE)))
                         .setTicker(fromHtml(extras.getString(TITLE)))
                         .setContentIntent(contentIntent)
+                        .setPriority(2)
                         .setAutoCancel(true);
 
         SharedPreferences prefs = context.getSharedPreferences(PushPlugin.COM_ADOBE_PHONEGAP_PUSH, Context.MODE_PRIVATE);

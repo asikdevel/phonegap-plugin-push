@@ -118,7 +118,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
                         } catch (JSONException e) {
                             Log.d(LOG_TAG, "no iconColor option");
                         }
-                        
+
                         boolean clearBadge = jo.optBoolean(CLEAR_BADGE, false);
                         if (clearBadge) {
                             setApplicationIconBadgeNumber(getApplicationContext(), 0);
@@ -217,16 +217,16 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
                     callbackContext.success();
                 }
             });
-        } else if (SUBSCRIBE.equals(action)){
+        } else if (SUBSCRIBE.equals(action)) {
             // Subscribing for a topic
             cordova.getThreadPool().execute(new Runnable() {
-                public void run() {                    
+                public void run() {
                     try {
                         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(COM_ADOBE_PHONEGAP_PUSH, Context.MODE_PRIVATE);
                         String token = sharedPref.getString(REGISTRATION_ID, "");
                         String topic = data.getString(0);
                         subscribeToTopic(topic, token);
-                        callbackContext.success();                        
+                        callbackContext.success();
                     } catch (JSONException e) {
                         callbackContext.error(e.getMessage());
                     } catch (IOException e) {
@@ -234,16 +234,16 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
                     }
                 }
             });
-        } else if (UNSUBSCRIBE.equals(action)){
+        } else if (UNSUBSCRIBE.equals(action)) {
             // un-subscribing for a topic
             cordova.getThreadPool().execute(new Runnable(){
-                public void run() {                    
+                public void run() {
                     try {
                         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(COM_ADOBE_PHONEGAP_PUSH, Context.MODE_PRIVATE);
                         String token = sharedPref.getString(REGISTRATION_ID, "");
                         String topic = data.getString(0);
                         unsubscribeFromTopic(topic, token);
-                        callbackContext.success();                        
+                        callbackContext.success();
                     } catch (JSONException e) {
                         callbackContext.error(e.getMessage());
                     } catch (IOException e) {
@@ -303,12 +303,13 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         gForeground = true;
+        clearAllNotifications();
     }
 
     @Override
     public void onPause(boolean multitasking) {
         super.onPause(multitasking);
-        gForeground = false;
+        gForeground = true;
 
         SharedPreferences prefs = getApplicationContext().getSharedPreferences(COM_ADOBE_PHONEGAP_PUSH, Context.MODE_PRIVATE);
         if (prefs.getBoolean(CLEAR_NOTIFICATIONS, true)) {
@@ -338,15 +339,14 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
     * Transform `topic name` to `topic path`
     * Normally, the `topic` inputed from end-user is `topic name` only.
     * We should convert them to GCM `topic path`
-    * Example: 
-    *  when	    topic name = 'my-topic'
-    *  then	    topic path = '/topics/my-topic'
+    * Example:
+    *  then     topic path = '/topics/my-topic'
+    *  when     topic name = 'my-topic'
     *
     * @param    String  topic The topic name
-    * @return           The topic path
+    * @return   The topic path
     */
-    private String getTopicPath(String topic)
-    {
+    private String getTopicPath(String topic) {
         return "/topics/" + topic;
     }
 
@@ -360,8 +360,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
         }
     }
 
-    private void subscribeToTopic(String topic, String registrationToken) throws IOException
-    {
+    private void subscribeToTopic(String topic, String registrationToken) throws IOException {
         try {
             if (topic != null) {
                 Log.d(LOG_TAG, "Subscribing to topic: " + topic);
@@ -369,7 +368,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
             }
         } catch (IOException e) {
             Log.e(LOG_TAG, "Failed to subscribe to topic: " + topic, e);
-			throw e;
+            throw e;
         }
     }
 
@@ -390,8 +389,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
         }
     }
 
-    private void unsubscribeFromTopic(String topic, String registrationToken) throws IOException
-    {
+    private void unsubscribeFromTopic(String topic, String registrationToken) throws IOException {
         try {
             if (topic != null) {
                 Log.d(LOG_TAG, "Unsubscribing to topic: " + topic);
@@ -399,11 +397,11 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
             }
         } catch (IOException e) {
             Log.e(LOG_TAG, "Failed to unsubscribe to topic: " + topic, e);
-			throw e;
+            throw e;
         }
     }
 
-    /*
+    /**
      * serializes a bundle to JSON.
      */
     private static JSONObject convertBundleToJson(Bundle extras) {
@@ -464,7 +462,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
     }
 
     public static boolean isInForeground() {
-      return gForeground;
+        return gForeground;
     }
 
     public static boolean isActive() {
