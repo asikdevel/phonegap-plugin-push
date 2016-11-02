@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.8.5](https://github.com/asikdevel/phonegap-plugin-push/tree/v1.8.5) (2016-11-03)
+[Full Changelog](https://github.com/asikdevel/phonegap-plugin-push/compare/v1.8.4...v1.8.5)
+
+- 1.8.5 [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/7b186a4b7230ae02cbc3eaa5e7e68f4eb5394405)
+- Bumping plugin version to 1.8.5 [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/7b186a4b7230ae02cbc3eaa5e7e68f4eb5394405)
+- Revert back priority handler. [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/9427139e7b411ed9767b5113edf395cd52b1015a)
+- Updating CHANGELOG [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/bf8b7419ce2e3b82681f13e892b06d96526a7530)
+
 ## [v1.8.4](https://github.com/asikdevel/phonegap-plugin-push/tree/v1.8.4) (2016-10-29)
 [Full Changelog](https://github.com/asikdevel/phonegap-plugin-push/compare/v1.8.3...v1.8.4)
 
