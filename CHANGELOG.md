@@ -1,5 +1,14 @@
 # Change Log
 
+## [v1.9.1](https://github.com/asikdevel/phonegap-plugin-push/tree/v1.9.1) (2016-11-08)
+[Full Changelog](https://github.com/asikdevel/phonegap-plugin-push/compare/v1.8.4...v1.9.1)
+
+- 1.9.1 [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/99ad4bedec4d936a1834a0344108c0f7f2e36d5d)
+- Bumping plugin version to 1.9.1 [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/a7be466554a14dad81fc80f146062228f43c58d9)
+- Merge from upstream github repository. [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/96cb0140c6945a52542b8901a88a3404b56b1f00)
+- Modify android push notification...[view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/261423d1f6c49787eb43236f0c803e0424dbf56b)
+- Updating CHANGELOG [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/e268a0dceff248b703ae75ff7923b7b3d673aeee)
+
 ## [v1.9.0](https://github.com/phonegap/phonegap-plugin-push/tree/v1.9.0) (2016-07-09)
 [Full Changelog](https://github.com/phonegap/phonegap-plugin-push/compare/v1.8.4...v1.9.0)
 
