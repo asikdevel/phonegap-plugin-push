@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.8.6](https://github.com/asikdevel/phonegap-plugin-push/tree/v1.8.6) (2016-11-10)
+[Full Changelog](https://github.com/asikdevel/phonegap-plugin-push/compare/v1.8.4...v1.8.6)
+
+- 1.8.6 [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/a23f9e4f233b348d31bfa4f7f47214c192e0f0f7)
+- Bumping plugin version to ~~1.8.5~~ 1.8.6 [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/45db9c822d2674e1979cad80629caa3beac69562)
+- Modify android push notification... [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/ee5f40558a93afc61a5c18374391f1a1cf5b1fc7)
+- Updating CHANGELOG [view commit](https://github.com/asikdevel/phonegap-plugin-push/commit/e4779de2a5996703ba70656630f35d79415d1af8)
+
 ## [v1.8.4](https://github.com/phonegap/phonegap-plugin-push/tree/v1.8.4) (2016-07-09)
 [Full Changelog](https://github.com/phonegap/phonegap-plugin-push/compare/v1.8.3...v1.8.4)
 
@@ -410,7 +418,7 @@
 
 **Fixed bugs:**
 
--  It is using in gcm data.additionalData ?	 [\#126](https://github.com/phonegap/phonegap-plugin-push/issues/126)
+-  It is using in gcm data.additionalData ?     [\#126](https://github.com/phonegap/phonegap-plugin-push/issues/126)
 - iOS notification from cold boot [\#117](https://github.com/phonegap/phonegap-plugin-push/issues/117)
 - Notification LED is not working [\#97](https://github.com/phonegap/phonegap-plugin-push/issues/97)
 
